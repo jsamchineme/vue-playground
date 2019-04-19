@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Vue Introduction</title>
+</head>
+<body>
+
+  <div id="root">
+    <product-list id="product-list">
+      <product-item
+        v-for="product in products" 
+        :key="product.id"
+        :id="product.id" 
+        :name="product.name"
+        :quantity-in-stock="product.quantityInStock" 
+        :price="product.price"
+        @add-item="addToCart(product.id)"
+        :update-status="updateAddedItems"
+        type='productItem'
+      >
+      </product-item>
+    </product-list>
+
+    <cart-product-list id="cart">
+      <product-item 
+        v-for="product in cart.products"
+        :key="product.id"
+        :id="product.id" 
+        :name="product.name" 
+        :quantity-in-stock="product.quantityInStock" 
+        :price="product.price"
+        @remove-item="removeFromCart(product.id)"
+        :update-status="updateRemovedItems"
+        type='cartItem'
+      >
+    </product-item>
+    </cart-product-list>
+  </div>
+  
+  <script src="vue.js"></script>
+  <script src="products.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
