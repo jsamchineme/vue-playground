@@ -7,7 +7,4 @@ export default {
   },
   mutations,
   actions,
-  getters: {
-    productItems: state => state.productItems,
-  },
 };

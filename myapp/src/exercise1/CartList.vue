@@ -1,16 +1,21 @@
 <template>
   <section id="cart">
-    <product-item
-      v-for="product in cartProducts"
-      :key="product.id"
-      :id="product.id"
-      :name="product.name"
-      :quantity-in-stock="product.quantityInStock"
-      :price="product.price"
-      @remove-item="removeFromCart(product)"
-      :update-status="updateStatus"
-      type="cartItem"
-    />
+    <transition-group
+      name="slide"
+      tag="div"
+    >
+      <product-item
+        v-for="product in cartProducts"
+        :key="product.id"
+        :id="product.id"
+        :name="product.name"
+        :quantity-in-stock="product.quantityInStock"
+        :price="product.price"
+        @remove-item="removeFromCart(product)"
+        :update-status="updateStatus"
+        type="cartItem"
+      />
+    </transition-group>
   </section>
 </template>
 
@@ -40,7 +45,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 #cart {
   min-height: 400px;
   width: 19%;
@@ -51,5 +56,23 @@ export default {
   overflow: scroll;
   margin-left: 1%;
   border-radius: 10px;
+}
+
+.slide-enter {
+  transition: all 1s ease-in-out;
+  margin-top: 0;
+  opacity: 1;
+}
+
+.slide-enter-active {
+  transition: all 1s ease-in-out;
+  margin-top: 0;
+  opacity: 1;
+}
+
+.slide-leave-active {
+  transition: all 1s ease-in-out;
+  margin-top: -200px;
+  opacity: 0;
 }
 </style>

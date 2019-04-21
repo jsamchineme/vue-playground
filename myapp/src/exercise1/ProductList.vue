@@ -37,7 +37,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 #product-list {
   width: 80%;
   min-height: 400px;
