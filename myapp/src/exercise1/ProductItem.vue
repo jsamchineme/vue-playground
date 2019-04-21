@@ -24,12 +24,12 @@
 export default {
   name: 'ProductItem',
   props: {
-    id: { type: String, required: true },
+    id: { type: Number, required: true },
     name: { type: String, required: true },
-    price: { type: String, required: true },
+    price: { type: Number, required: true },
     quantityInStock: { type: Number, required: true },
     type: { type: String, required: true },
-    updateStatus: { type: String, required: true },
+    updateStatus: { type: Function, required: true },
   },
   data() {
     return {

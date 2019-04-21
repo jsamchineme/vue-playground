@@ -1,11 +1,17 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link tag="li" to="/">
+      <router-link
+        tag="li"
+        to="/"
+      >
         <a>Home</a>
       </router-link>
       <br>
-      <router-link tag="li" to="/exercise-1">
+      <router-link
+        tag="li"
+        to="/exercise-1"
+      >
         <a>Exercise 1 - Product List</a>
       </router-link>
     </div>
