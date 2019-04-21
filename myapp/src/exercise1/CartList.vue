@@ -1,15 +1,15 @@
 <template>
-  <section id="product-list">
+  <section id="cart">
     <product-item
-      v-for="product in products"
+      v-for="product in cartProducts"
       :key="product.id"
       :id="product.id"
       :name="product.name"
       :quantity-in-stock="product.quantityInStock"
       :price="product.price"
-      @add-item="addToCart(product)"
-      :update-status="updateAddedItems"
-      type="productItem"
+      @remove-item="removeFromCart(product)"
+      :update-status="updateStatus"
+      type="cartItem"
     />
   </section>
 </template>
@@ -19,33 +19,37 @@ import { mapActions, mapGetters } from 'vuex';
 import ProductItem from '@/exercise1/ProductItem.vue';
 
 export default {
-  name: 'ProductList',
+  name: 'CartList',
   components: {
     ProductItem,
   },
   computed: {
     ...mapGetters([
-      'products',
+      'cartProducts',
     ]),
   },
   methods: {
     ...mapActions([
-      'addToCart',
-      'updateAddedItems',
+      'updateRemovedItems',
+      'removeFromCart',
     ]),
+    updateStatus() {
+      this.updateRemovedItems(this.cartProducts);
+    },
   },
 };
 </script>
 
 <style lang="scss">
-#product-list {
-  width: 80%;
+#cart {
   min-height: 400px;
-  background-color: gray;
+  width: 19%;
+  background-color: #4e4e4e;
+  color: black;
   float: left;
   height: 700px;
   overflow: scroll;
-  border-radius: 10px 10px 10px 10px;
-  margin-bottom: 40px;
+  margin-left: 1%;
+  border-radius: 10px;
 }
 </style>

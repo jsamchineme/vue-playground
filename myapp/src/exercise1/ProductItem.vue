@@ -1,5 +1,5 @@
 <template>
-  <section :class="className">
+  <div :class="className">
     <header>{{ name }}</header>
     <div class="product-item-body">
       <div class="product-price">
@@ -17,7 +17,7 @@
         </button>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
