@@ -11,12 +11,12 @@ describe('actions on the productItems module', () => {
     };
   });
 
-  it('handle the updateAddedItems action', async () => {
+  it('handles the updateAddedItems action', async () => {
     await productItems.actions.updateAddedItems(context, product);
     expect(context.commit).toHaveBeenCalled();
   });
 
-  it('handle the updateRemovedItems action', async () => {
+  it('handles the updateRemovedItems action', async () => {
     await productItems.actions.updateRemovedItems(context, mockProducts);
     expect(context.commit).toHaveBeenCalled();
   });

@@ -11,13 +11,13 @@ describe('actions on the cart module', () => {
     };
   });
 
-  it('handle the addToCart action', async () => {
-    await cart.actions.addToCart(context, product);
+  it('handles the addToCart action', () => {
+    cart.actions.addToCart(context, product);
     expect(context.commit).toHaveBeenCalled();
   });
 
-  it('handle the removeFromCart action', async () => {
-    await cart.actions.removeFromCart(context, product);
+  it('handles the removeFromCart action', () => {
+    cart.actions.removeFromCart(context, product);
     expect(context.commit).toHaveBeenCalled();
   });
 });

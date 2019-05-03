@@ -15,7 +15,7 @@ describe('mutations on the productItems module', () => {
   });
 
 
-  it('handle the UPDATE_ADDED_ITEMS mutation', () => {
+  it('handles the UPDATE_ADDED_ITEMS mutation', () => {
     productItems.mutations.UPDATE_ADDED_ITEMS(state, product);
     expect(state.productItems[0]).toEqual(product);
     expect(product.existsInCart).toBe(true);
@@ -28,14 +28,14 @@ describe('mutations on the productItems module', () => {
     expect(state.productItems.length).toEqual(1);
   });
 
-  it('handle the UPDATE_REMOVED_ITEMS mutation', () => {
+  it('handles the UPDATE_REMOVED_ITEMS mutation', () => {
     // trigger mutation that adds 2 item
     productItems.mutations.UPDATE_ADDED_ITEMS(state, product);
     productItems.mutations.UPDATE_ADDED_ITEMS(state, product1);
-    // manually 1 add 1 product to the cartProducts array
-    // We add one instead of 2
-    // so that we simulate a case where a product has been
-    // removed from the cart after it's been initially added
+    // manually add 1 product to the cartProducts array
+    // We add 1 instead of 2
+    // so that we simulate a case where 1 product has been
+    // removed from the cart after 2 had been initially added
     cartProducts.push(product);
 
     productItems.mutations.UPDATE_REMOVED_ITEMS(state, cartProducts);

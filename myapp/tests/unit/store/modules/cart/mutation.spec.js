@@ -12,7 +12,7 @@ describe('mutations on the cart module', () => {
     };
   });
 
-  it('handle the ADD_CART_ITEM mutation', () => {
+  it('handles the ADD_CART_ITEM mutation', () => {
     cart.mutations.ADD_CART_ITEM(state, mockProducts[0]);
     expect(state.cart.products[0]).toEqual(mockProducts[0]);
   });
@@ -24,7 +24,7 @@ describe('mutations on the cart module', () => {
     expect(state.cart.products.length).toEqual(1);
   });
 
-  it('handle the REMOVE_CART_ITEM mutation', () => {
+  it('handles the REMOVE_CART_ITEM mutation', () => {
     cart.mutations.ADD_CART_ITEM(state, mockProducts[0]);
     cart.mutations.REMOVE_CART_ITEM(state, mockProducts[0]);
     expect(state.cart.products).toEqual([]);
