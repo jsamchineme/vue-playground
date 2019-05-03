@@ -8,7 +8,7 @@ module.exports = {
   rules: {
     'no-console': 'off',
     'no-debugger': 'off',
-    'no-param-reassign': 0
+    'no-param-reassign': 0,
   },
 
   parserOptions: {

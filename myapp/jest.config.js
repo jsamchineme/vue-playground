@@ -22,6 +22,14 @@ module.exports = {
   testMatch: [
     '**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)',
   ],
+  setupFiles: ['./jest.helpers.js'],
+  collectCoverage: true,
+  verbose: true,
+  collectCoverageFrom: [
+    'src/**/*.{js,vue}',
+    '!src/main.js',
+    '!src/registerServiceWorker.js',
+  ],
   testURL: 'http://localhost/',
   watchPlugins: [
     'jest-watch-typeahead/filename',
