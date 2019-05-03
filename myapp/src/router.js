@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import ProductList from './exercise1/ProductList.vue';
+import CartApp from '@/exercise1/App.vue';
 
 Vue.use(Router);
 
@@ -16,8 +16,8 @@ export default new Router({
     },
     {
       path: '/exercise-1',
-      name: 'productList',
-      component: ProductList,
+      name: 'cart-app',
+      component: CartApp,
     },
     {
       path: '/about',
