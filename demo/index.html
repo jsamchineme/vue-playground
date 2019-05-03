@@ -11,6 +11,7 @@
 
   <div id="root">
     <product-list id="product-list">
+      <h1>Products List</h1>
       <product-item
         v-for="product in products" 
         :key="product.id"
@@ -26,6 +27,7 @@
     </product-list>
 
     <cart-product-list id="cart">
+      <h1>Cart Products</h1>
       <product-item 
         v-for="product in cart.products"
         :key="product.id"
